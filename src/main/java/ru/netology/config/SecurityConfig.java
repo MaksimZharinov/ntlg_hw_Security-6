@@ -20,11 +20,11 @@ public class SecurityConfig {
 		var manager = new InMemoryUserDetailsManager();
 		var userBuilder = User.builder();
 		manager.createUser(userBuilder.username("admin")
-				.password("admin")
+				.password("{noop}admin")
 				.roles("ADMIN")
 				.build());
 		manager.createUser(userBuilder.username("user")
-				.password("user")
+				.password("{noop}user")
 				.roles("USER")
 				.build());
 		return manager;
